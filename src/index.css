@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Color system — cool Mowasalti palette (see DESIGN.md in AlSooqonbording) plus a turquoise accent. */
+@theme {
+  --color-ink: #0b2a38;
+  --color-navy: #123251;
+  --color-blue: #0077b6;
+  --color-blue-deep: #005f94;
+  --color-cyan: #0096c7;
+  --color-turq: #12b5ad;
+  --color-turq-soft: #2dd4c4;
+  --color-mist: #edf4f8;
+  --color-line: #cfdee8;
+  --color-ok: #1b9e77;
+  --color-warn: #c77d0a;
+  --color-mute: #5b7684;
+  --font-sans: "IBM Plex Sans", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-ar: "IBM Plex Sans Arabic", "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #fff; color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+html[lang="ar"] body { font-family: var(--font-ar); line-height: 1.75; }
+@layer base {
+  button, input, select, textarea { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--color-turq); outline-offset: 2px; }
+}
+.num { font-feature-settings: "tnum"; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+@keyframes pulse-ring { 0% { transform: scale(0.8); opacity: 0.7; } 100% { transform: scale(2.2); opacity: 0; } }
+.pulse-ring { animation: pulse-ring 1.8s var(--ease-out-expo) infinite; transform-origin: center; transform-box: fill-box; }
