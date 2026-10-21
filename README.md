@@ -1,7 +1,7 @@
 # Mowasalty · مواصلاتي
 
 The transport module of the alSooq / Hawil ecosystem: trip booking, live tracking and
-fleet management. The current working prototype lives in
+fleet management. The earlier single-file prototype lives in
 [`Saboora12345/AlSooqonbording`](https://github.com/Saboora12345/AlSooqonbording)
 as `mowasalaty.html`.
 
@@ -21,3 +21,16 @@ To add it yourself instead:
 The project skill [`.claude/skills/21st-ui`](./.claude/skills/21st-ui/SKILL.md) tells
 Claude how to turn 21st.dev's React/Tailwind output into Mowasalaty screens: the
 blue/cyan brand, IBM Plex, Arabic RTL + English LTR, and reduced-motion support.
+
+## Mowasalti MaaS site
+
+React + Vite + Tailwind + Framer Motion, bilingual (Arabic RTL first, English LTR).
+
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # typecheck + production build
+```
+
+Design tokens, honesty rules and the component list are in [`DESIGN.md`](./DESIGN.md).
+The repo now has a build stack, so the 21st-ui skill's "plain HTML" note no longer applies here.
